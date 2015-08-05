@@ -1,0 +1,57 @@
+OPENBOX 
+
+pacman -S xfce4-terminal
+yaourt archey
+nano .bashrc
+	add archey to end of line
+
+pacman -S openbox obconf obmenu menumaker
+pacman -S lxappearance
+pacman -S lxrandr lxappearance-obconf openbox-themes
+pacman -S xdg-user-dirs
+pacman -S leafpad epdfview nitrogen
+pacman -S ttf-bitstream-vera ttf-dejavu
+pacman -S pcmanfm xfce4-panel tint2 xcompmgr xorg-xfd
+pacman -S archlinux-xdg-menu
+pacman -S galculator xfce4-settings
+pacman -S thunar firefox flashplugin thunderbird xfce-terminal gedit k3b vlc
+pacman -S gvfs udisks2 p7zip
+pacman -S gimp dia inkscape ffmpeg abiword
+pacman -S gparted shotwell mirage
+pacman -S libcups cups-pdf gutenprint hplip
+
+   cp /etc/xdg/openbox/{menu.xml,rc.xml,autostart} /home/bob/.config/openbox/
+confirm .config is owned by the user
+   ls -a -l
+if it is owned by root
+   chown -R bob:users /home/bob/.config  (bob=username)
+ 
+nano .xinitrc          
+   VBoxClient-all &
+   exec openbox-session
+
+yaourt xarchiver 
+yaourt oxygen-gtk-icons
+
+----------------  libreofice
+pacman -S libreoffice   *** en_US = 24
+--------------------------------
+pacman -S slim slim-themes archlinux-themes-slim
+nano /etc/slim.conf
+	default user	bob
+	current_theme	archlinux-darch-grey
+systemctl enable slim.service   ---< this will enable slim logon manager
+
+/home/bob/.config/openbox/menu.xml
+/home/bob/.config/autostart
+
+Audio Codecs
+
+pacman -S gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-bad
+pacman -S gstreamer0.10 gstreamer0.10-plugins
+
+Video Codecs
+
+pacman -S libbluray libquicktime libdvdread libdvdnav libdvdcss cdrdao
+yaourt codecs -or- codecs64     (4)
+yaourt libaacs
