@@ -1,0 +1,16 @@
+# pacman -Syy
+# pacman -S openbox
+--chose mesa-libgl on my Intel Graphics System
+
+$ mkdir -p .config/openbox 
+$ cp /etc/xdg/openbox/* .config/openbox
+
+cp
+
+
+mkdir -p .config/openbox
+sudo pacman -S openbox
+cp /etc/xdg/openbox/* .config/openbox
+sudo pacman -S obconf lxappearance-obconf thunar thunar-volman thunar-archive-plugin gvfs xfce4-panel xfce4-terminal xfce4-whiskermenu-plugin leafpad file-roller gmrun tumbler gpicview nitrogen oblogout parcellite python2-xdg p7zip xorg-xprop xdg-user-dirs
+
+yaourt -S localepurge obkey-git compton-git gtk-theme-config
