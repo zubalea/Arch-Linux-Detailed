@@ -24,7 +24,9 @@ $ yaourt -S compton-git obkey-git obmenu-generator gtk-theme-config ttf-ms-fonts
 $ sudo pacman -S pavucontrol gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb hardinfo htop nitrogen numix-themes tumbler
 $ yaourt -S packer pamac-aur pnmixer 
 $ sudo pacman -S archlinux-themes-slim archlinux-wallpaper avahi clipit galculator gmrun gsimplecal
+
 $ yaourt -S chromium-pepper-flash opera-beta opera-ffmpeg-codecs 
+-- flash and ffmpeg failed.  troubleshoot later
 $ sudo pacman -S banshee freerdp shotwell shutter
 $ yaourt -S remmina-git remmina-plugin-rdesktop localepurge
 $ sudo pacman -S conky xfburn libreoffice-fresh
