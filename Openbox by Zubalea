@@ -1,4 +1,4 @@
-# pacman -Syy
+# pacman -Syyu  -- Get latest and greatest before proceeding.  
 # pacman -S haveged
 # systemctl enable haveged
 # systemctl start haveged
@@ -17,14 +17,15 @@
 --chose mesa-libgl on my Intel Graphics System
 $ mkdir -p .config/openbox 
 $ cp /etc/xdg/openbox/* .config/openbox
+$ sudo pacman -S ttf-bitstream-vera ttf-dejavu
 $ sudo pacman -S arandr file-roller geany gparted lxappearance lxappearance-obconf obconf oblogout openbox-themes slim slim-themes thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tint2 xfce4-notifyd xfce4-terminal python2-xdg
-$ sudo pacman -S gnome-themes-standard xdg-user-dirs p7zip ttf-bitstream-vera ttf-dejavu pulseaudio pulseaudio-alsa libcanberra-pulse lib32-libpulse lib32-libcanberra-pulse lib32-alsa-plugins
-$ yaourt compton obkey-git obmenu-generator gtk-theme-config ttf-ms-font 
+$ sudo pacman -S gnome-themes-standard xdg-user-dirs p7zip  pulseaudio pulseaudio-alsa libcanberra-pulse lib32-libpulse lib32-libcanberra-pulse lib32-alsa-plugins
+$ yaourt -S compton-git obkey-git obmenu-generator gtk-theme-config ttf-ms-fonts
 $ sudo pacman -S pavucontrol gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb hardinfo htop nitrogen numix-themes tumbler
-$ yaourt packer pamac pnmixer 
-$ pacman -S archlinux-themes-slim archlinux-wallpaper avahi clipit galculator gmrun gsimplecal
-$ yaourt chromium-pepper-flash opera-beta opera-ffmpeg-codecs 
-$ pacman -S banshee freerdp shotwell shutter
-$ yaourt remmina-git remmina-plugin-rdesktop localepurge
-$ pacman -S conky xfburn
+$ yaourt -S packer pamac-aur pnmixer 
+$ sudo pacman -S archlinux-themes-slim archlinux-wallpaper avahi clipit galculator gmrun gsimplecal
+$ yaourt -S chromium-pepper-flash opera-beta opera-ffmpeg-codecs 
+$ sudo pacman -S banshee freerdp shotwell shutter
+$ yaourt -S remmina-git remmina-plugin-rdesktop localepurge
+$ sudo pacman -S conky xfburn
 
