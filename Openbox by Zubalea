@@ -17,31 +17,14 @@
 --chose mesa-libgl on my Intel Graphics System
 $ mkdir -p .config/openbox 
 $ cp /etc/xdg/openbox/* .config/openbox
-$ sudo pacman -S obconf 
-
-lxappearance-obconf 
-thunar 
-thunar-volman 
-thunar-archive-plugin 
-gvfs 
-xfce4-panel 
-xfce4-terminal 
-xfce4-whiskermenu-plugin 
-leafpad 
-file-roller 
-gmrun 
-tumbler 
-gpicview 
-nitrogen 
-oblogout 
-parcellite 
-python2-xdg 
-p7zip 
-xorg-xprop xdg-user-dirs
-
-sudo pacman -S archlinux-wallpaper openbox pcmanfm clipit lxdm lxpanel lxappearance-obconf python2-xdg oblogout synapse plank leafpad file-roller ntfs-3g dosfstools gvfs gnome-themes-standard firefox ristretto xdg-user-dirs xcompmgr xfce4-power-manager xfce4-terminal xdotool p7zip unzip zip unrar gtk-engine-murrine numlockx --noconfirm
-xdg-user-dirs-update
-
-
-yaourt -S localepurge obkey-git compton-git gtk-theme-config
+$ sudo pacman -S arandr File-roller geany gparted lxappearance lxappearance-obconf obconf oblogout openbox-themes slim slim-themes thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tint2 xfce4-notifyd xfce4-terminal python2-xdg
+$ sudo pacman -S gnome-themes-standard xdg-user-dirs p7zip ttf-bitstream-vera ttf-dejavu pulseaudio pulseaudio-alsa libcanberra-pulse lib32-libpulse lib32-libcanberra-pulse lib32-alsa-plugins
+$ yaourt compton obkey-git obmenu-generator gtk-theme-config ttf-ms-font 
+$ sudo pacman -S pavucontrol gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb hardinfo htop nitrogen numix-themes tumbler
+$ yaourt packer pamac pnmixer 
+$ pacman -S archlinux-themes-slim archlinux-wallpaper avahi clipit galculator gmrun gsimplecal
+$ yaourt chromium-pepper-flash opera-beta opera-ffmpeg-codecs 
+$ pacman -S banshee freerdp shotwell shutter
+$ yaourt remmina-git remmina-plugin-rdesktop localepurge
+$ pacman -S conky xfburn
 
