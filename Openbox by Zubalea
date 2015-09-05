@@ -27,7 +27,7 @@ $ sudo pacman -S archlinux-themes-slim archlinux-wallpaper avahi clipit galculat
 
 $ yaourt -S chromium-pepper-flash opera-beta opera-ffmpeg-codecs 
 -- flash and ffmpeg failed.  troubleshoot later
-$ sudo pacman -S banshee freerdp shotwell shutter
+$ sudo pacman -S banshee shotwell shutter
 $ yaourt -S remmina-git remmina-plugin-rdesktop localepurge
 $ sudo pacman -S conky xfburn libreoffice-fresh
 
