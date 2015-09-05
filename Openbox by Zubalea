@@ -25,6 +25,10 @@ $ sudo pacman -S pavucontrol gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-s
 $ yaourt -S packer pamac-aur pnmixer 
 $ sudo pacman -S archlinux-themes-slim archlinux-wallpaper avahi clipit galculator gmrun gsimplecal
 
+-- enabled slim
+-- created xinitrc with exec openbox-session
+-- copied openbox folder again it was gone.  not sure why,.
+
 $ yaourt -S chromium-pepper-flash opera-beta opera-ffmpeg-codecs 
 -- flash and ffmpeg failed.  troubleshoot later
 $ sudo pacman -S banshee shotwell shutter
