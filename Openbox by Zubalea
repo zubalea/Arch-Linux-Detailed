@@ -1,16 +1,47 @@
 # pacman -Syy
+# pacman -S haveged
+# systemctl enable haveged
+# systemctl start haveged
+# pacman-key --init
+# pacman-key --populate archlinux
+# useradd -m -g users -G adm,storage,wheel,power,audio,video -s /bin/bash <username>
+# passwd   
+# passwd <username>
+# pacman -S openssh   -- I prefer to work via SSH instead of in VM.
+# systemctl enable sshd
+# systemctl start sshd
+# pacman -S reflector
+# reflector --country Canada --sort rate -l 6 --verbose --save /etc/pacman.d/mirrorlist
+-- all commands from now on done via SSH  (easy to copy and paste)
 # pacman -S openbox
 --chose mesa-libgl on my Intel Graphics System
-
 $ mkdir -p .config/openbox 
 $ cp /etc/xdg/openbox/* .config/openbox
+$ sudo pacman -S obconf 
 
-cp
+lxappearance-obconf 
+thunar 
+thunar-volman 
+thunar-archive-plugin 
+gvfs 
+xfce4-panel 
+xfce4-terminal 
+xfce4-whiskermenu-plugin 
+leafpad 
+file-roller 
+gmrun 
+tumbler 
+gpicview 
+nitrogen 
+oblogout 
+parcellite 
+python2-xdg 
+p7zip 
+xorg-xprop xdg-user-dirs
 
+sudo pacman -S archlinux-wallpaper openbox pcmanfm clipit lxdm lxpanel lxappearance-obconf python2-xdg oblogout synapse plank leafpad file-roller ntfs-3g dosfstools gvfs gnome-themes-standard firefox ristretto xdg-user-dirs xcompmgr xfce4-power-manager xfce4-terminal xdotool p7zip unzip zip unrar gtk-engine-murrine numlockx --noconfirm
+xdg-user-dirs-update
 
-mkdir -p .config/openbox
-sudo pacman -S openbox
-cp /etc/xdg/openbox/* .config/openbox
-sudo pacman -S obconf lxappearance-obconf thunar thunar-volman thunar-archive-plugin gvfs xfce4-panel xfce4-terminal xfce4-whiskermenu-plugin leafpad file-roller gmrun tumbler gpicview nitrogen oblogout parcellite python2-xdg p7zip xorg-xprop xdg-user-dirs
 
 yaourt -S localepurge obkey-git compton-git gtk-theme-config
+
