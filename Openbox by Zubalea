@@ -27,5 +27,5 @@ $ sudo pacman -S archlinux-themes-slim archlinux-wallpaper avahi clipit galculat
 $ yaourt -S chromium-pepper-flash opera-beta opera-ffmpeg-codecs 
 $ sudo pacman -S banshee freerdp shotwell shutter
 $ yaourt -S remmina-git remmina-plugin-rdesktop localepurge
-$ sudo pacman -S conky xfburn
+$ sudo pacman -S conky xfburn libreoffice-fresh
 
