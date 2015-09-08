@@ -29,7 +29,9 @@ $ sudo pacman -S archlinux-themes-slim archlinux-wallpaper avahi clipit galculat
 -- enabled slim
 -- created xinitrc with exec openbox-session
 -- copied openbox folder again it was gone.  not sure why,.
-
+For generating a dynamic menu with icons, execute:
+   obmenu-generator -i -p
+   
 $ yaourt -S chromium-pepper-flash opera-beta opera-ffmpeg-codecs 
 -- flash and ffmpeg failed.  troubleshoot later
 $ sudo pacman -S banshee shotwell shutter
