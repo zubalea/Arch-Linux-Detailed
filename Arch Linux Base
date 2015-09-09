@@ -1,9 +1,100 @@
 -- This script begins after booting Arch Linux Install ISO and selecting Boot Arch Linux (x86_64)
 # passwd
 -- Start SSH
+-- SSH into a new install is much easy to copy and paste string of text.
 # systemctl start sshd
 -- Test Network Connectivity
 # ping -c 3 www.google.ca
-# ifconfig
+-- get ip address
+# ifconfig   
+
+-- Partition with fdisk tool
+-- Creating LVM Partition with Root, Boot, Swap and Home partitions
+# modprobe -a dm-mod
+# lsblk
+
+-- X is the destination drive
+# fdisk /dev/sdX
+-- Start fdisk Commands
+Command (m for help) n
+Partition type 
+   p   primary (0 primary, 0 extended, 4 free) 
+   e   extended (container for logical partitions) 
+Select (default p): default
+Partition number (1-128, default 1): default
+First sector (34-234441614, default = 2048) or {+-}size{KMGTP}: default
+Last sector (2048-234441614, default = 234441614) or {+-}size{KMGTP}: default
+Current type is 'Linux' 
+
+Command (m for help) t
+Hex code for LVM: 8e 
+
+Command (m for help) w
+-- End fdisk Commands
+
+# pvdisplay 
+-- Create physical volume
+-- SDD Drive use --dataalignment 1m
+# pvcreate --dataalignment 1m /dev/sdxY
+-- NON SSD Drive
+# pvcreate /dev/sdxY
+
+-- View new physical volume
+# pvdisplay
+
+-- Create Volume Group
+-- lvm is an arbitrary name chosen by user
+# vgcreate lvm /dev/sdxY
+
+-- View Volume Group
+# vgdisplay
+
+-- Create logical volume
+-- Example based on Partition Scheme show above
+-- lvolhome uses all remaining partition space.   Uses lowercase l instead of uppercase L and special +100%FREE attribute.
+# lvcreate -L 500MB lvm -n boot
+# lvcreate -L 4G lvm -n swap
+# lvcreate -L 20G lvm -n root
+# lvcreate -l +100%FREE lvm -n home
+
+-- Format the LVM logical volumes
+# mkfs.ext4 /dev/mapper/lvm-root
+# mkfs.ext4 /dev/mapper/lvm-home
+# mkfs.ext4 /dev/mapper/lvm-boot
+# mkswap /dev/mapper/lvm-swap
+
+-- Mount file system
+-- Order is important
+# mount /dev/mapper/lvm-root /mnt
+# mkdir /mnt/boot /mnt/home
+# mount /dev/mapper/lvm-boot /mnt/boot
+# mount /dev/mapper/lvm-home /mnt/home
+# swapon /dev/mapper/lvm-swap
+
+-- Scan and Activate LVM logical volumes
+# vgscan
+# vgchange -ay
+
+-- verify 
+# lsblk -f 
+
+-- Setup mirrors
+# pacman -S reflector
+# reflector --country 'Canada' -p http -f 6 -l 6 -n 24 --verbose --save
+
+# pacman -Syy
+
+# pacstrap -i /mnt base base-devel
+# genfstab -U -p /mnt >> /mnt/etc/fstab
+# arch-chroot /mnt /bin/bash
+
+# vi /etc/locale.gen  -- uncomment en_US.UTF-8 UTF-8
+# locale-gen
+# echo LANG=en_US.UTF-8 > /etc/locale.conf
+# export LANG=en_US.UTF-8
+
+# ln -s /usr/share/zoneinfo/America/<your zubzone> /etc/localtime
+
+# 
 
 
