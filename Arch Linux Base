@@ -1,4 +1,5 @@
 -- This script begins after booting Arch Linux Install ISO and selecting Boot Arch Linux (x86_64)
+-- # prompt is for root, $ prompt is for user
 # passwd
 -- Start SSH
 -- SSH into a new install is much easy to copy and paste string of text.
