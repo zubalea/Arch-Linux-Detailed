@@ -1,0 +1,9 @@
+-- This script begins after booting Arch Linux Install ISO and selecting Boot Arch Linux (x86_64)
+# passwd
+-- Start SSH
+# systemctl start sshd
+-- Test Network Connectivity
+# ping -c 3 www.google.ca
+# ifconfig
+
+
