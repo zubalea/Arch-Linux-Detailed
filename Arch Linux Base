@@ -144,7 +144,6 @@ HOOKS="base udev autodetect modconf block lvm2 filesystems keyboard fsck"
 # systemctl enable sshd.service
 
 # vi /etc/pacman.conf
- 
 -- uncomment as shown
 # Misc options 
 #UseSyslog 
@@ -158,12 +157,9 @@ ILoveCandy
 Include = /etc/pacman.d/mirrorlist 
 
 -- add the following under [multilib] section
-
 [archlinuxfr]
 SigLevel = Never
 Server = http://repo.archlinux.fr/$arch
-
-
 -- save and exit pacman.conf
 -- update pacman library
 
@@ -173,7 +169,7 @@ Server = http://repo.archlinux.fr/$arch
 # pacman -S yaourt 
 
 -- Prepare for a Desktop Environment
-# pacman -S xorg-server xorg-server-utils xorg-xinit
+# pacman -S xorg-server xorg-server-utils xorg-xinit ttf-dejavu alsa-utils xterm 
 
 -- install video drivers
 
@@ -195,6 +191,9 @@ extra/xf86-video-intel 2.99.917-5 (xorg-drivers xorg)
 -- If you are using installing on a touchpad laptop
 
 # pacman -S xf86-input-synaptics
+
+-- if you required Pulseaudio for wine or skype
+$ sudo pacman -S pavucontrol pulseaudio-alsa
 
 
 
