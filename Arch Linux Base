@@ -79,11 +79,13 @@ Command (m for help) w
 -- verify 
 # lsblk -f 
 
+# pacman -Syy
+
 -- Setup mirrors
 # pacman -S reflector
-# reflector --country 'Canada' -p http -f 6 -l 6 -n 24 --verbose --save
+# reflector --country 'Canada' -p http -f 6 -l 6 -n 24 --verbose --save /etc/pacman.d/mirrorlist
 
-# pacman -Syy
+
 
 # pacstrap -i /mnt base base-devel
 # genfstab -U -p /mnt >> /mnt/etc/fstab
@@ -96,10 +98,10 @@ Command (m for help) w
 
 # ln -s /usr/share/zoneinfo/America/<your zubzone> /etc/localtime
 
-# pacman -S ntp
+--# pacman -S ntp
 # hwclock --systohc --utc
-# timedatectl set-ntp true 
-# timedatectl set-timezone America/Montreal
+--# timedatectl set-ntp true 
+--# timedatectl set-timezone America/Montreal
 
 # echo myhostname > /etc/hostname
 
@@ -130,7 +132,7 @@ HOOKS="base udev autodetect modconf block lvm2 filesystems keyboard fsck"
 # grub-install --target=i386-pc --recheck /dev/sdX
 # grub-mkconfig -o /boot/grub/grub.cfg
 
-# pacman -S sudo
+# pacman -S sudo vim
 # visudo
 
 -- To allow members of group wheel sudo access uncomment following line:
@@ -139,9 +141,9 @@ HOOKS="base udev autodetect modconf block lvm2 filesystems keyboard fsck"
 -- This is a good spot to reboot to see if everything is running correctly.
 
 -- Installed SSHD permanently
-# pacman -S openssh 
-# systemctl start sshd.service
-# systemctl enable sshd.service
+$ sudo pacman -S openssh 
+$ sudo systemctl start sshd.service
+$ sudo systemctl enable sshd.service
 
 # vi /etc/pacman.conf
 -- uncomment as shown
