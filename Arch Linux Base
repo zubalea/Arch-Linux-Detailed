@@ -144,8 +144,9 @@ HOOKS="base udev autodetect modconf block lvm2 filesystems keyboard fsck"
 $ sudo pacman -S openssh 
 $ sudo systemctl start sshd.service
 $ sudo systemctl enable sshd.service
+-- SSH into box using command:  ssh username@ip_address_of_box
 
-# vi /etc/pacman.conf
+$ sudo vi /etc/pacman.conf
 -- uncomment as shown
 # Misc options 
 #UseSyslog 
@@ -165,21 +166,21 @@ Server = http://repo.archlinux.fr/$arch
 -- save and exit pacman.conf
 -- update pacman library
 
-# pacman -Syyu
+$ sudo pacman -Syyu
 
 -- install yaourt AUR package manager
-# pacman -S yaourt 
+$ sudo pacman -S yaourt 
 
 -- Prepare for a Desktop Environment
-# pacman -S xorg-server xorg-server-utils xorg-xinit ttf-dejavu alsa-utils xterm 
+$ sudo pacman -S xorg-server xorg-server-utils xorg-xinit ttf-dejavu alsa-utils xterm 
 
 -- install video drivers
 
-# lspci | grep -e VGA -e 3D 
+$ sudo lspci | grep -e VGA -e 3D 
 
 Result: 00:02.0 VGA compatible controller: Intel Corporation Mobile 945GM/GMS, 943/940GML Express Integrated Graphics Controller (rev 03) 
 
-# pacman -Ss 945G 
+$ sudo pacman -Ss 945G 
 
 Result:
 
@@ -188,11 +189,11 @@ extra/xf86-video-intel 2.99.917-5 (xorg-drivers xorg)
 
 -- this command could be different base on video card found in previous step.
 
-# pacman -S xf86-video-intel 
+$ sudo pacman -S xf86-video-intel 
 
 -- If you are using installing on a touchpad laptop
 
-# pacman -S xf86-input-synaptics
+$ sudo pacman -S xf86-input-synaptics
 
 -- if you required Pulseaudio for wine or skype
 $ sudo pacman -S pavucontrol pulseaudio-alsa
