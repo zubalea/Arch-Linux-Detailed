@@ -14,10 +14,11 @@ Set Theme to Onyx
 sudo pacman -S archlinux-wallpaper slim slim-themes 
 
 Updated autostart and menu.xml.   content coming....
+$ yaourt -S compton-git obkey-git obmenu-generator gtk-theme-config ttf-ms-fonts
 
 $ sudo pacman -S arandr file-roller geany gparted lxappearance lxappearance-obconf obconf oblogout openbox-themes slim slim-themes thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tint2 xfce4-notifyd xfce4-terminal python2-xdg
 $ sudo pacman -S gnome-themes-standard xdg-user-dirs p7zip  pulseaudio pulseaudio-alsa libcanberra-pulse lib32-libpulse lib32-libcanberra-pulse lib32-alsa-plugins
-$ yaourt -S compton-git obkey-git obmenu-generator gtk-theme-config ttf-ms-fonts
+
 $ sudo pacman -S pavucontrol gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb hardinfo htop nitrogen numix-themes tumbler
 $ yaourt -S packer pamac-aur pnmixer 
 $ sudo pacman -S archlinux-themes-slim archlinux-wallpaper avahi clipit galculator gmrun gsimplecal
