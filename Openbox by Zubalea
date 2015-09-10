@@ -13,9 +13,12 @@ Set Theme to Onyx
 
 sudo pacman -S archlinux-wallpaper slim slim-themes 
 
-Updated autostart and menu.xml.   content coming....
+Updated autostart  content coming....
 $ yaourt -S compton-git obkey-git obmenu-generator gtk-theme-config ttf-ms-fonts
-
+For generating a dynamic menu with icons, execute:
+   obmenu-generator -i -p
+   
+   
 $ sudo pacman -S arandr file-roller geany gparted lxappearance lxappearance-obconf obconf oblogout openbox-themes slim slim-themes thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tint2 xfce4-notifyd xfce4-terminal python2-xdg
 $ sudo pacman -S gnome-themes-standard xdg-user-dirs p7zip  pulseaudio pulseaudio-alsa libcanberra-pulse lib32-libpulse lib32-libcanberra-pulse lib32-alsa-plugins
 
@@ -26,8 +29,7 @@ $ sudo pacman -S archlinux-themes-slim archlinux-wallpaper avahi clipit galculat
 -- enabled slim
 -- created xinitrc with exec openbox-session
 -- copied openbox folder again it was gone.  not sure why,.
-For generating a dynamic menu with icons, execute:
-   obmenu-generator -i -p
+
    
 $ yaourt -S chromium-pepper-flash opera-beta opera-ffmpeg-codecs 
 -- flash and ffmpeg failed.  troubleshoot later
