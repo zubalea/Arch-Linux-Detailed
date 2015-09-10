@@ -3,6 +3,11 @@ $ sudo pacman -S openbox
 $ mkdir -p .config/openbox 
 $ cp /etc/xdg/openbox/* .config/openbox
 $ sudo pacman -S ttf-bitstream-vera 
+$ sudo pacman -S arandr clipit file-roller geany gmrun galculator gvfs lxappearance lxappearance-obconf nitrogen obconf oblogout  thunar tint2 tumbler xdg-user-dirs xfce4-notifyd xfce4-terminal
+$ cp /etc/X11/xinit/xinitrc ~/.xinitrc
+$ vi .xinitrc   --  add   exec openbox-session before the twm line.
+
+
 $ sudo pacman -S arandr file-roller geany gparted lxappearance lxappearance-obconf obconf oblogout openbox-themes slim slim-themes thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tint2 xfce4-notifyd xfce4-terminal python2-xdg
 $ sudo pacman -S gnome-themes-standard xdg-user-dirs p7zip  pulseaudio pulseaudio-alsa libcanberra-pulse lib32-libpulse lib32-libcanberra-pulse lib32-alsa-plugins
 $ yaourt -S compton-git obkey-git obmenu-generator gtk-theme-config ttf-ms-fonts
