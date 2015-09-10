@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name[en_US]=Nitrogen
+GenericName=Fast and lightweight desktop background browser and setter for X windows
+Exec=/usr/bin/nitrogen
+Terminal=false
+Icon[en_US]=nitrogen.png
+Type=Application
+Categories=System;
+Comment[en_US]=Fast and lightweight desktop background browser and setter for X windows  
