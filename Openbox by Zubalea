@@ -13,7 +13,7 @@ Set Theme to Onyx
 
 sudo pacman -S archlinux-wallpaper slim slim-themes 
 
-
+Updated autostart and menu.xml.   content coming....
 
 $ sudo pacman -S arandr file-roller geany gparted lxappearance lxappearance-obconf obconf oblogout openbox-themes slim slim-themes thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tint2 xfce4-notifyd xfce4-terminal python2-xdg
 $ sudo pacman -S gnome-themes-standard xdg-user-dirs p7zip  pulseaudio pulseaudio-alsa libcanberra-pulse lib32-libpulse lib32-libcanberra-pulse lib32-alsa-plugins
