@@ -82,7 +82,7 @@ Command (m for help) w
 # pacman -Syy
 
 -- Setup mirrors
-# pacman -S reflector
+# pacman -S reflector git
 # reflector --country 'Canada' -p http -f 6 -l 6 -n 24 --verbose --save /etc/pacman.d/mirrorlist
 
 
