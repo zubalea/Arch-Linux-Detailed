@@ -1,6 +1,6 @@
 ## Arch-Linux
 
-My build and steps to Install Arch Linux with a Desktop Environment of choice.
+My build and steps to Install Arch Linux with OpenBox
 
 Install Order:
 
