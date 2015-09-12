@@ -3,10 +3,13 @@ $ sudo pacman -S openbox
 $ mkdir -p .config/openbox 
 $ cp /etc/xdg/openbox/* .config/openbox
 $ sudo pacman -S ttf-bitstream-vera 
-$ sudo pacman -S arandr clipit file-roller geany gmrun galculator gvfs lxappearance lxappearance-obconf nitrogen obconf oblogout  thunar tint2 tumbler xdg-user-dirs xfce4-notifyd xfce4-terminal
+$ sudo pacman -S arandr clipit file-roller geany gmrun galculator gvfs lxappearance lxappearance-obconf
+$ sudo pacman -S nitrogen obconf oblogout thunar tint2 tumbler xdg-user-dirs xfce4-notifyd xfce4-terminal
 $ cp /etc/X11/xinit/xinitrc ~/.xinitrc
-$ vi .xinitrc   --  add   exec openbox-session before the twm line.
+$ vi .xinitrc   --  add   exec openbox-session   before the twm line.
+$ xdg-user-dirs-update  -- used to create default folders in Home directory
 $ startx  -- test openbox is running.  
+$ 
 
 Openbox Configuration Manager:
 Set Theme to Onyx
