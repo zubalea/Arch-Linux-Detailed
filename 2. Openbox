@@ -14,7 +14,17 @@ $
 Openbox Configuration Manager:
 Set Theme to Onyx
 
-sudo pacman -S archlinux-wallpaper slim slim-themes 
+sudo pacman -S archlinux-wallpaper  
+
+validate----
+sudo pacman -S lightdm lightdm-gtk-greeter
+yaourt bunsen-themes
+Update lightdm.conf file
+Update greeter file
+
+
+
+
 
 Updated autostart  content coming....
 $ yaourt -S compton-git obkey-git obmenu-generator gtk-theme-config ttf-ms-fonts
