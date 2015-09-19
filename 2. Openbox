@@ -8,23 +8,44 @@ $ sudo pacman -S nitrogen obconf oblogout thunar tint2 tumbler xdg-user-dirs xfc
 $ cp /etc/X11/xinit/xinitrc ~/.xinitrc
 $ vi .xinitrc   --  add   exec openbox-session   before the twm line.
 $ xdg-user-dirs-update  -- used to create default folders in Home directory
-$ startx  -- test openbox is running.  
-$ 
+$ startx  -- test openbox is running.  Right-Click and select exit to go back to prompt
+
+-- Login Manager
+$ sudo pacman -S lightdm lightdm-gtk-greeter
+$ yaourt bunsen-themes-git
+# vi /etc/lightdm/lightdm.conf
+-- In the [Seat:*] section update the following: greeter-session=lightdm-gtk-greeter
+# vi /etc/lightdm/lightdm-gtk-greeter.conf
+-------------------------------------------
+-- Start of lightdm-gtk-greeter.conf update
+-------------------------------------------
+[greeter]
+background=/usr/share/backgrounds/personal/Kitten_DarkBackground.jpg
+#user-background=
+theme-name=Bunsen-lightdm
+icon-theme-name=Bunsen-lightdm
+font-name=Free Sans Bold 10
+xft-antialias=true
+#xft-dpi=
+xft-hintstyle=hintslight
+xft-rgba=rgb
+indicators=~language;~session;~power
+clock-format=true
+#keyboard=
+#reader=
+position=10% 35%
+#screensaver-timeout=
+-------------------------------------------
+-- End of lightdm-gtk-greeter.conf update
+-------------------------------------------
+
+
+
+
+
 
 Openbox Configuration Manager:
 Set Theme to Onyx
-
-sudo pacman -S archlinux-wallpaper  
-
-validate----
-sudo pacman -S lightdm lightdm-gtk-greeter
-yaourt bunsen-themes
-Update lightdm.conf file
-Update greeter file
-
-
-
-
 
 Updated autostart  content coming....
 $ yaourt -S compton-git obkey-git obmenu-generator gtk-theme-config ttf-ms-fonts
