@@ -14,13 +14,19 @@ $ startx  -- test openbox is running.  Right-Click and select exit to go back to
 $ sudo pacman -S lightdm lightdm-gtk-greeter
 $ yaourt bunsen-themes-git
 # vi /etc/lightdm/lightdm.conf
--- In the [Seat:*] section update the following: greeter-session=lightdm-gtk-greeter
+-- In the [Seat:*] section update the following: 
+
+   greeter-session=lightdm-gtk-greeter
+
+# mkdir -p /usr/share/backgrounds/personal
+-- save some wallpapers for the lightdm in the personal folder
 # vi /etc/lightdm/lightdm-gtk-greeter.conf
+
 -------------------------------------------
 -- Start of lightdm-gtk-greeter.conf update
 -------------------------------------------
 [greeter]
-background=/usr/share/backgrounds/personal/Kitten_DarkBackground.jpg
+background=/usr/share/backgrounds/personal/<name of wallpaper image>.extension
 #user-background=
 theme-name=Bunsen-lightdm
 icon-theme-name=Bunsen-lightdm
@@ -38,9 +44,6 @@ position=10% 35%
 -------------------------------------------
 -- End of lightdm-gtk-greeter.conf update
 -------------------------------------------
-
-
-
 
 
 
