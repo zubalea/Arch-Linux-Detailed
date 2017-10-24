@@ -41,5 +41,9 @@
 -- compare old nzbget.conf with new one.    merge the two together to keep the servers configs
 -- add docker start nzbget to crontab
 
+-- did a systemctl service to start all my dockers.
+
+-- tvheadhend
+-- Installed via yaourt.  Non-git version with hdhomerun
 
 
