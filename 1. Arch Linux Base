@@ -81,11 +81,13 @@ Command (m for help) w
 
 # pacman -Syy
 
--- Setup mirrors
+
+
+-- Only if enough room on USB run following Setup mirrors
 # pacman -S reflector git
 # reflector --country 'Canada' -p http -f 6 -l 6 -n 24 --verbose --save /etc/pacman.d/mirrorlist
-
-
+-- Did not have enough room on USB to install reflector
+-- Updated mirrors instead in /etc/pacman.d/mirrorlist
 
 # pacstrap -i /mnt base base-devel
 # genfstab -U -p /mnt >> /mnt/etc/fstab
@@ -96,6 +98,8 @@ Command (m for help) w
 # echo LANG=en_US.UTF-8 > /etc/locale.conf
 # export LANG=en_US.UTF-8
 
+-- check /etc/localtime is set to what zone
+-- if not your zone, then delete localtime and run following command
 # ln -s /usr/share/zoneinfo/America/<your zubzone> /etc/localtime
 
 --# pacman -S ntp
@@ -130,6 +134,8 @@ HOOKS="base udev autodetect modconf block lvm2 filesystems keyboard fsck"
 # passwd newusernamehere
 
 # grub-install --target=i386-pc --recheck /dev/sdX
+-- lvmetad warning are ok.   Don't bother finding a method to remove them.   As the method will messup your boot up.
+-- Remove USB boot drive if still installed.
 # grub-mkconfig -o /boot/grub/grub.cfg
 
 # pacman -S sudo vim
@@ -138,12 +144,16 @@ HOOKS="base udev autodetect modconf block lvm2 filesystems keyboard fsck"
 -- To allow members of group wheel sudo access uncomment following line:
 %wheel      ALL=(ALL) ALL
 
--- This is a good spot to reboot to see if everything is running correctly.
+-- Reboot now to get out of chroot
+# exit
+root@archiso # shutdown -h now
 
 -- Installed SSHD permanently
+-- Run following 3 commands on console
 $ sudo pacman -S openssh 
 $ sudo systemctl start sshd.service
 $ sudo systemctl enable sshd.service
+-- remove entry in local terminal .ssh/known_hosts for ip_address_of_box first.
 -- SSH into box using command:  ssh username@ip_address_of_box
 
 $ sudo vi /etc/pacman.conf
