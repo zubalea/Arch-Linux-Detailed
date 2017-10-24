@@ -45,5 +45,22 @@
 
 -- tvheadhend
 -- Installed via yaourt.  Non-git version with hdhomerun
-
+# yaourt tvheadend
+-- I don't think the following section is required
+# pacman -S xmltv
+-- pacman all missing perl module for mc2xml zap2it.pl script
+# pacman -S perl-html-parser
+# pacman -S perl-http-cookies
+# pacman -S perl-http-message
+# pacman -S perl-json
+# pacman -S perl-json-xs
+# pacman -S perl-lwp-protocol-https
+# pacman -S site_perl
+-- END of I don't think this is required
+# cd /home/<home user>
+# git clone https://github.com/Rigolo/tv-grab-file.git
+# cp tv_grab_file /usr/bin
+-- change path to xmltv file after the cat command.
+# vi /usr/bin/tv_grab_file
+-- reboot
 
