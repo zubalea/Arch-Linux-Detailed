@@ -64,3 +64,22 @@
 # vi /usr/bin/tv_grab_file
 -- reboot
 
+-- Snapraid
+$ yaourt snapraid
+$ sudo vim /etc/fstab
+# Parity Disks
+UUID=<UID> /mnt/parity1 ext4 defaults 0 2
+UUID=<UID> /mnt/parity2 ext4 defaults 0 2
+
+# Snapraid Disks
+UUID=<UID> /mnt/disk1 ext4 defaults 0 2
+UUID=<UID> /mnt/disk2 ext4 defaults 0 2
+UUID=<UID> /mnt/disk3 ext4 defaults 0 2
+UUID=<UID> /mnt/disk4 ext4 defaults 0 2
+UUID=<UID> /mnt/disk5 ext4 defaults 0 2
+
+
+-- Automating Scripts
+
+
+-- Mailing
