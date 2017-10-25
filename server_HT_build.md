@@ -81,6 +81,7 @@ UUID=<UID> /mnt/disk4 ext4 defaults 0 2
 UUID=<UID> /mnt/disk5 ext4 defaults 0 2
 ---------------/
 $ sudo vim /etc/snapraid.conf
+```sh
 parity /mnt/parity1/snapraid.parity
 2-parity /mnt/parity2/snapraid.2-parity
 
@@ -99,10 +100,40 @@ exclude /tmp/
 exclude *.pst 
 exclude /lost+found/
 blocksize 256
+```
 
 
+Automating Scripts systemd timers
+```sh
+# cd /etc/systemd/system
+# touch snapraid.service
+# touch snapraid.timers
+```
+Content of snapraid.service
+```sh
+[Unit]
+Description=Run Snapraid daily script
 
--- Automating Scripts
+[Service]
+Type=oneshot
+ExecStart=/root/scripts/snapraid.sh 
 
+[Install]
+WantedBy=default.target
+cat: 1: No such file or director
+```
+Content of snapraid.timer
+Run at 2h45AM daily
+```sh
+[Unit]
+Description=Run Snapraid Daily Script
+
+[Timer]
+OnCalendar=*-*-* 02:45:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+```
 
 -- Mailing
