@@ -67,6 +67,7 @@
 -- Snapraid
 $ yaourt snapraid
 $ sudo vim /etc/fstab
+/----------------
 # Parity Disks
 UUID=<UID> /mnt/parity1 ext4 defaults 0 2
 UUID=<UID> /mnt/parity2 ext4 defaults 0 2
@@ -77,6 +78,27 @@ UUID=<UID> /mnt/disk2 ext4 defaults 0 2
 UUID=<UID> /mnt/disk3 ext4 defaults 0 2
 UUID=<UID> /mnt/disk4 ext4 defaults 0 2
 UUID=<UID> /mnt/disk5 ext4 defaults 0 2
+---------------/
+$ sudo vim /etc/snapraid.conf
+parity /mnt/parity1/snapraid.parity
+2-parity /mnt/parity2/snapraid.2-parity
+
+content /var/snapraid.content
+content /mnt/disk1/snapraid.content
+content /mnt/disk2/snapraid.content
+
+disk d1 /mnt/disk1/
+disk d2 /mnt/disk2/
+disk d3 /mnt/disk3/
+disk d4 /mnt/disk4/
+disk d5 /mnt/disk5/
+
+exclude *.unrecoverable
+exclude /tmp/
+exclude *.pst 
+exclude /lost+found/
+blocksize 256
+
 
 
 -- Automating Scripts
