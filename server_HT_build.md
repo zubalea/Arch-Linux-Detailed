@@ -49,7 +49,7 @@ The UUID were the same as the previous ubuntu config.
 # docker start nzbget
 # docker logs nzbget
 # docker stop nzbget
-``
+```
 -- compare old nzbget.conf with new one.    merge the two together to keep the servers configs
 -- add docker start nzbget to crontab
 
