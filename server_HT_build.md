@@ -207,3 +207,8 @@ docker start couchpotato
 docker start mysql
 ```
 -- Mailing
+kvm
+```sh
+# pacman -S qemu
+# pacman -S libvirt
+```
