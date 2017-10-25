@@ -6,12 +6,13 @@
 -- Powered my other drives
 
 -- The UUID were the same as the previous ubuntu config.
-
+```sh
 # cat old_fstab >> /etc/fstab
 # vi /etc/fstab -- cleaned up data from old_fstab
 # cd /mnt
 # mkdir <folder1 folder2 folderN>  --create all mount points used in fstab for new drives
 # mount -a
+```
 -- test drives and data is there
 
 -- reboot to test mounts are working
