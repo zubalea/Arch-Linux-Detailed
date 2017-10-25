@@ -1,11 +1,11 @@
--- Server was on Ubuntu 14.04.   Now migrating to arch linux
--- O/S was on 2 LVM device.   One extended from the other
--- New SSD drive added for Arch O/S, but the extended ubuntu LVM drive was also added. 
--- Because ubuntu LVM drive has not been repartitioned yet, boot up error are showing about missing LVM.   They can be disreguarded at this time.
+* Server was on Ubuntu 14.04.   Now migrating to arch linux
+* O/S was on 2 LVM device.   One extended from the other
+* New SSD drive added for Arch O/S, but the extended ubuntu LVM drive was also added. 
+* Because ubuntu LVM drive has not been repartitioned yet, boot up error are showing about missing LVM.   They can be disreguarded at this time.
 
--- Powered my other drives
+* Powered my other drives
 
--- The UUID were the same as the previous ubuntu config.
+The UUID were the same as the previous ubuntu config.
 ```sh
 # cat old_fstab >> /etc/fstab
 # vi /etc/fstab -- cleaned up data from old_fstab
@@ -13,32 +13,43 @@
 # mkdir <folder1 folder2 folderN>  --create all mount points used in fstab for new drives
 # mount -a
 ```
--- test drives and data is there
+## Test drives and data is there
 
--- reboot to test mounts are working
+## reboot to test mounts are working
+```sh
 # shutdown -r now
+```
 
 -- Setup NFS
+```sh
 # vi /etc/exports
+```
 -- Example of allowing 2 networks to the share.
+```sh
 /mnt/foldertosharepath/foldertoshare 192.168.1.0/24(permissions here)  192.168.2.0/24(permissions here)
-
+```
+```sh
 # exportsfs -arv
-
+```
 -- Enabling Docker
+```sh
 # tee /etc/modules-load.d/loop.conf <<< "loop"
 # modprobe loop 
 # pacman -S docker
 # systemctl start docker
 # systemctl enable docker
 # usermod -aG docker <username>
-
+```
 -- nzbget
+```sh
 # docker create --name=nzbget -v /etc/localtime:/etc/localtime:ro -v /mnt/<folder>/docker/nzbget:/config -v /mnt/<folder>/downloads:/downloads -e PGID=1000 -e PUID=1000 -p <my port>:6789 linuxserver/nzbget:latest
+```
 -- before starting nzbget mv nzbget.conf to a new name.
+```sh
 # docker start nzbget
 # docker logs nzbget
 # docker stop nzbget
+``
 -- compare old nzbget.conf with new one.    merge the two together to keep the servers configs
 -- add docker start nzbget to crontab
 
@@ -46,10 +57,15 @@
 
 -- tvheadhend
 -- Installed via yaourt.  Non-git version with hdhomerun
+```sh
 # yaourt tvheadend
+```
 -- I don't think the following section is required
+```sh
 # pacman -S xmltv
+```
 -- pacman all missing perl module for mc2xml zap2it.pl script
+```sh
 # pacman -S perl-html-parser
 # pacman -S perl-http-cookies
 # pacman -S perl-http-message
@@ -57,18 +73,27 @@
 # pacman -S perl-json-xs
 # pacman -S perl-lwp-protocol-https
 # pacman -S site_perl
+```
 -- END of I don't think this is required
+
+```sh
 # cd /home/<home user>
 # git clone https://github.com/Rigolo/tv-grab-file.git
 # cp tv_grab_file /usr/bin
+```
 -- change path to xmltv file after the cat command.
+```sh
 # vi /usr/bin/tv_grab_file
+```
 -- reboot
 
--- Snapraid
+# Snapraid
+```sh
 $ yaourt snapraid
 $ sudo vim /etc/fstab
-/----------------
+```
+
+```sh
 # Parity Disks
 UUID=<UID> /mnt/parity1 ext4 defaults 0 2
 UUID=<UID> /mnt/parity2 ext4 defaults 0 2
@@ -79,7 +104,7 @@ UUID=<UID> /mnt/disk2 ext4 defaults 0 2
 UUID=<UID> /mnt/disk3 ext4 defaults 0 2
 UUID=<UID> /mnt/disk4 ext4 defaults 0 2
 UUID=<UID> /mnt/disk5 ext4 defaults 0 2
----------------/
+```
 $ sudo vim /etc/snapraid.conf
 ```sh
 parity /mnt/parity1/snapraid.parity
