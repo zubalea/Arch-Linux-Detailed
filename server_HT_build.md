@@ -136,4 +136,49 @@ Persistent=true
 WantedBy=timers.target
 ```
 
+Update EPG for TVHeadENd
+```sh
+[Unit]
+Description=Update EPG from zap2it
+
+[Service]
+Type=oneshot
+ExecStart=/root/scripts/update_epg.sh 
+
+[Install]
+WantedBy=default.target
+```
+EPG Timer
+```sh
+[Unit]
+Description=EPG Updater using zap2xml.pl script
+
+[Timer]
+OnCalendar=*-*-* 00:45:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+```
+
+Startup script - For any script that runs at boot up only
+```sh
+[Unit]
+Description=My Startup Script
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/startup.sh 
+
+[Install]
+WantedBy=default.target
+```
+startup.sh content
+```sh
+#!/bin/sh
+docker start nzbget
+docker start sonarr
+docker start couchpotato
+docker start mysql
+```
 -- Mailing
