@@ -85,6 +85,7 @@ The UUID were the same as the previous ubuntu config.
 ```sh
 # vi /usr/bin/tv_grab_file
 ```
+Enable the tv adapters from the gui.    Configuration->DVB Inputs->TV Adapters
 -- reboot
 
 # Snapraid
