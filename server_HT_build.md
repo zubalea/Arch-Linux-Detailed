@@ -212,4 +212,13 @@ kvm
 ```sh
 # pacman -S qemu
 # pacman -S libvirt
+# pacman -S ebtables dnsmasq openbsd-netcat
+-- comment out everything for now
+# vi /etc/libvirt/libvirtd.conf
+
+# systemctl enable libvirtd.service
+# systemctl enable virtlogd.service
+# systemctl start libvirtd.service
+-- Check 
+# systemctl status libvirtd.service
 ```
