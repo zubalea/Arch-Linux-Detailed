@@ -222,3 +222,8 @@ kvm
 -- Check 
 # systemctl status libvirtd.service
 ```
+
+samba
+```sh
+# pacman -S samba
+# 
